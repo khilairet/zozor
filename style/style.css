@@ -1,0 +1,276 @@
+/* CSS de la page Carnet de Voyage de ZOZOR */
+
+/* Définition des polices perso */
+
+@font-face
+{
+    font-family: 'BallparkWeiner';
+    src: url('font/ballpark.eot');
+    src: url('font/ballpark.eot?#iefix') format('embedded-opentype'),
+         url('font/ballpark.woff') format('woff'),
+         url('font/ballpark.ttf') format('truetype'),
+         url('font/ballpark.svg#BallparkWeiner') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Dayrom';
+    src: url('font/dayrom.eot');
+    src: url('font/dayrom.eot?#iefix') format('embedded-opentype'),
+         url('font/dayrom.woff') format('woff'),
+         url('font/dayrom.ttf') format('truetype'),
+         url('font/dayrom.svg#Dayrom') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Définition des styles principaux de la page */
+
+body
+{
+    background-image: url("/Users/pauline/Sites/Code/tp-openclassrooms/zozor/images/fond_jaune.png");
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #181818;
+}
+
+#main-wrapper
+{
+    width: 90%;
+    margin: auto;
+}
+
+h1
+{
+    text-transform: uppercase;
+    font-family: Dayrom, sherif;
+    font-weight: normal;
+    font-size: 1.4em;
+}
+
+/* Définition de l'en-tête */
+
+header
+{
+    background: url('/Users/pauline/Sites/Code/tp-openclassrooms/zozor/images/separateur.png') repeat-x bottom;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#logo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-left: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.header-title
+{
+    margin-left: 10px;
+    font-family: BallparkWeiner, sans-serif;
+    text-transform: none;
+    font-size: 2.5em;
+}
+.header-p /* J'aimerais remonter le texte et le coller à la partie #logo. Pour ça j'ai fais un margin-bottom et padding-bottom de 0 pour #logo et je fais un margin-top et padding-top de Opx pour .header-p mais ils ne se collent pas. Comment faire? J'ai aussi essayer de faire du un display flex vertical avec le bloc #main-title mais ca ne change rien (cfr plus bas). J'ai aussi essayé de faire un .menu margin-top:0px mais ca ne change rien non plus (vu que le .menu fait partie d'un bloc avec #main-title)  */
+{
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 20px;
+    font-family: Dayrom, sherif;
+    font-size: 1.2em;
+}
+
+#main-title
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Menu */
+
+.menu
+{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.menu li a
+{
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: normal;
+    font-family: Dayrom, sherif;
+    color: #181818;
+    text-decoration: none;
+}
+
+.menu li a:hover
+{
+    color: #66211f;
+    border-bottom: 2px solide #66211f; /* Pourquoi est-ce que border-bottom ne s'affiche pas en :hover, alors que la couleur, ça fonctionne ? */
+}
+
+/* Banner */
+
+#banner
+{
+    padding-top: 1.5em;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+#banner-img
+{
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px black;
+}
+/* Comment fait en sorte que l'image s'adapte au widht/à l'écran de la page ?? */
+
+#banner-description
+{
+    background: rgba(0,0,0,0.6);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0; /* Pourquoi est-ce que dès que j'ajoute la position de l'élément, mon flexbox disparait ?? Du coup il n'est plus en space-between comme demandé (seulement depuis que j'ai ajouté position: et bottom: Tu sais me dire comment ça se fait ? 
+    Est-ce que c'est lié au fait que je n'arrive pas à adapter l'image à l'écran ?? Ou alors c'est un conflit entre flexbox et position relative ?  */
+}
+
+.btn-voirlarticle
+{
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    background: rgba(232,23,16,0.8);
+    padding: 0.5em;
+}
+
+/* Corps */
+
+.title-article
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0em;
+}
+
+.title-article img
+{
+    margin-right: 0.5em;
+}
+
+p
+{
+    text-align: justify;
+}
+
+article
+{
+    margin-right: 1em;
+    margin-top: 0em;
+}
+aside
+{
+    border: 1px #6e6a63 solid;
+    border-radius: 5px;
+    background-color: #6e6a63;
+    text-align: justify; 
+    padding: 0.1em 1em 0.1em 1em; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1em;
+    margin-top: 1em;
+    color: #f8f6ee;
+    font-size: 0.9em;
+    position: relative;
+}
+
+aside h1
+    {
+        text-align: center;
+    }
+
+section
+{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#fleche-bulle
+{
+    position: absolute;
+    top: 9em;
+    left: -0.9em;
+}
+
+#photo-zozor
+{
+    border: 1px black solid;
+}
+
+aside p 
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#follow-me img
+{
+    margin: 0.2em;
+}
+
+/* Footer */
+
+footer
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: url("/Users/pauline/Sites/Code/tp-openclassrooms/zozor/images/ico_top.png") no-repeat top center, url("/Users/pauline/Sites/Code/tp-openclassrooms/zozor/images/separateur.png") repeat-x top;
+    padding-top: 1em;
+}
+
+#mes-amis
+{
+    list-style-image: url("/Users/pauline/Sites/Code/tp-openclassrooms/zozor/images/ico_liensexterne.png");
+}
+
+#mes-amis a
+{
+    color: #66211f;
+}
+
+.liste-mesamis
+{
+    display: flex;
+}
+
+#mes-photos img
+{
+    border: 1px black solid;
+}
+
+
+
+/* FINIIIIII !!! */
